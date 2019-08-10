@@ -1,8 +1,10 @@
 <template>
   <div id="app">
     <headers></headers>
+	<transition>
+		<router-view/>
+	</transition>
     <footers></footers>
-    <router-view/>
   </div>
 </template>
 
@@ -30,10 +32,12 @@ a{
 	color:#000;
 }
 img{
-	width:100%;
 	height:100%;
 	border:none;
 	vertical-align: middle;
+}
+.gomeImgLoad{
+	width: 100%;
 }
 .clearfix:before,.clearfix:after{
 	content: '';
@@ -60,5 +64,17 @@ button{
 } 
 .content{
   margin-top: 40px;
+  overflow-x: hidden;
+  margin-bottom: 50px;
 }
+.v-enter,.v-leave-to{
+	opacity: 0;
+	transform: translate(100%);
+}
+.v-enter-active,.v-leave-active{
+	transition: all 0.5s ease;
+	position: absolute;
+	transform: translate(-100%);
+
+}	
 </style>

@@ -1,8 +1,13 @@
 <template>
-    <div class="nav">
+    <div class="navs">
         <router-link to="/">首页</router-link>
         <router-link to="/Meg">消息</router-link>
-        <router-link to="/Shop">购物车</router-link>
+        <router-link to="/Shop">
+            购物车
+            <span class="mui-badge" id="badge" style="background : red; color : #fff">
+                {{$store.getters.getAll}}
+            </span>
+        </router-link>
         <router-link to="/Search">搜索</router-link>
     </div>
 </template>
@@ -14,7 +19,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
-    .nav{
+    .navs{
+        background-color: #fff;
         position: fixed;
         bottom: 0;
         left: 0;
