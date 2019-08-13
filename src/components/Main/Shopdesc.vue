@@ -38,9 +38,6 @@ export default {
   }
   .cont{
      width: 100%;
-     img{
-         
-     }
   }
 }
 </style>
